@@ -59,7 +59,39 @@ header p {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
   .input-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group button {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .qty-input {
+    width: 100%;
+  }
+
+  .primary-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .results-grid {
     grid-template-columns: 1fr;
   }
 }
