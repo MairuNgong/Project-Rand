@@ -33,7 +33,7 @@ function App() {
   }
 
   const handleRandomize = () => {
-    // Create a pool of slots based on projects and their counts
+
     let slots = []
     projects.forEach(p => {
       for (let i = 0; i < p.count; i++) {
@@ -41,14 +41,23 @@ function App() {
       }
     })
 
-    // Shuffle members
-    const shuffledMembers = [...members].sort(() => Math.random() - 0.5)
 
-    // Assign
+    const shuffleArray = (arr) => {
+      const array = [...arr]
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+          ;[array[i], array[j]] = [array[j], array[i]]
+      }
+      return array
+    }
+
+    const shuffledMembers = shuffleArray(members)
+
+
     const newResults = {}
     const unassigned = []
 
-    // Initialize results for all projects
+
     projects.forEach(p => {
       newResults[p.name] = []
     })
